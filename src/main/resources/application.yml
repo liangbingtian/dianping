@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_center
+    hikari:
+      username: root
+      password: liangbing39024&
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  # 拒绝404的处理方式,如果controller都没成功，则再使用static静态资源匹配
+  resources:
+    add-mappings: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  # 接入前端静态资源页面
+    static-path-pattern: /static/**
+  # thymeleaf相关配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+server:
+  port: 8081
