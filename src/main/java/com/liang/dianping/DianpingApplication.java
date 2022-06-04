@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
-@MapperScan(value = "com.liang.dianping")
+@MapperScan(value = "com.liang.dianping.mapper")
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class DianpingApplication {
 

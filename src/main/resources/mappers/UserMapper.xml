@@ -5,7 +5,7 @@
     <id property="id" column="id" jdbcType="INTEGER"/>
     <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-    <result property="telphone" column="telphone" jdbcType="VARCHAR"/>
+    <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
     <result property="password" column="password" jdbcType="VARCHAR"/>
     <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
     <result property="gender" column="gender" jdbcType="INTEGER"/>

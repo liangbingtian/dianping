@@ -12,7 +12,10 @@ public enum EmBusinessError {
   NO_HANDLER_FOUND(10003, "找不到执行路径"),
   PARAMETER_VALIDATION_ERROR(10004, "请求参数校验失败"),
   //用户服务错误类型
-  REGISTER_DUP_FAIL(20001, "注册失败，用户已存在");
+  REGISTER_DUP_FAIL(20001, "注册失败，用户已存在"),
+  LOGIN_FAIL(20002, "手机号或密码错误"),
+  //admin相关错误
+  ADMIN_SHOULD_LOGIN(30001, "管理员需要先登录");
 
   private Integer errorCode;
 

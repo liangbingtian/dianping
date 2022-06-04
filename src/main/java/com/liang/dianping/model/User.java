@@ -32,7 +32,7 @@ public class User {
   @TableField(exist = false)
   private Date updateTime;
 
-  private String telphone;
+  private String telephone;
 
   private String password;
 
