@@ -1,5 +1,6 @@
 package com.liang.dianping.common;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,5 +30,10 @@ public class CommonUtil {
     BASE64Encoder base64Encoder = new BASE64Encoder();
     return base64Encoder.encode(messageDigest.digest(str.getBytes(StandardCharsets.UTF_8)));
   }
+
+  public static void main(String[] args) throws NoSuchAlgorithmException {
+    System.out.println(CommonUtil.encodeByMd5("1234567"));
+  }
+
 
 }

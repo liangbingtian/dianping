@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author liangbingtian
  * @date 2022/06/02 下午4:50
  */
-@RestController
+@Controller
 @RequestMapping(value = "/admin/admin")
 public class AdminController {
 
@@ -31,7 +32,7 @@ public class AdminController {
   @Autowired
   private UserService userService;
 
-  @Value("${admin.email")
+  @Value("${admin.email}")
   private String email;
 
   @Value("${admin.encryptPassword}")
