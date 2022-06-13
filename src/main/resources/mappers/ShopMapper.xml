@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liang.dianping.mapper.ShopMapper">
+  <resultMap id="baseResultMap" type="com.liang.dianping.model.Shop">
+    <id property="id" column="id" jdbcType="INTEGER"/>
+    <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    <result property="name" column="name" jdbcType="VARCHAR"/>
+    <result property="remarkScore" column="remark_score" jdbcType="DECIMAL"/>
+    <result property="pricePerMan" column="price_per_man" jdbcType="INTEGER"/>
+    <result property="latitude" column="latitude" jdbcType="DECIMAL"/>
+    <result property="longitude" column="longitude" jdbcType="DECIMAL"/>
+    <result property="categoryId" column="category_id" jdbcType="INTEGER"/>
+    <result property="tags" column="tags" jdbcType="VARCHAR"/>
+    <result property="startTime" column="start_time" jdbcType="VARCHAR"/>
+    <result property="endTime" column="end_time" jdbcType="VARCHAR"/>
+    <result property="address" column="address" jdbcType="VARCHAR"/>
+    <result property="sellerId" column="seller_id" jdbcType="INTEGER"/>
+    <result property="iconUrl" column="icon_url" jdbcType="VARCHAR"/>
+    <result property="distance" column="distance" jdbcType="INTEGER"/>
+  </resultMap>
+
+  <sql id="base_column_list">
+    id,name,remark_score,price_per_man,latitude,longitude,category_id
+    ,tags,start_time,end_time,address,seller_id,icon_url
+  </sql>
+
+  <select id="recommend" resultMap="baseResultMap">
+    select <include refid="base_column_list"></include>
+    from shop order by id ASC
+  </select>
+</mapper>

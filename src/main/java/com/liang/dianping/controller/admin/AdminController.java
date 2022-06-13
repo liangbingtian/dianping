@@ -4,6 +4,9 @@ import com.liang.dianping.common.AdminPermission;
 import com.liang.dianping.common.BusinessException;
 import com.liang.dianping.common.CommonUtil;
 import com.liang.dianping.common.EmBusinessError;
+import com.liang.dianping.service.CategoryService;
+import com.liang.dianping.service.SellerService;
+import com.liang.dianping.service.ShopService;
 import com.liang.dianping.service.UserService;
 import java.security.NoSuchAlgorithmException;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +35,15 @@ public class AdminController {
   @Autowired
   private UserService userService;
 
+  @Autowired
+  private ShopService shopService;
+
+  @Autowired
+  private CategoryService categoryService;
+
+  @Autowired
+  private SellerService sellerService;
+
   @Value("${admin.email}")
   private String email;
 
@@ -49,6 +61,9 @@ public class AdminController {
   public ModelAndView index() {
     ModelAndView modelAndView = new ModelAndView("/admin/admin/index");
     modelAndView.addObject("userCount", userService.countAllUsers());
+    modelAndView.addObject("shopCount", shopService.countAllShops());
+    modelAndView.addObject("categoryCount", categoryService.countAllCategories());
+    modelAndView.addObject("sellerCount", sellerService.countSellers());
     modelAndView.addObject("CONTROLLER_NAME", "admin");
     modelAndView.addObject("ACTION_NAME", "index");
     return modelAndView;

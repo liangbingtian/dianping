@@ -16,5 +16,6 @@ public interface SellerService {
   Seller get(Integer id);
   List<Seller> selectAll();
   Seller changeStatus(Integer id, Integer disabledFlag) throws BusinessException;
+  Long countSellers();
 
 }

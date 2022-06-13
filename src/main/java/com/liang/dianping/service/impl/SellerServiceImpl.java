@@ -48,4 +48,10 @@ public class SellerServiceImpl extends ServiceImpl<SellerMapper, Seller> impleme
     updateById(updateSeller);
     return updateSeller;
   }
+
+  @Override
+  public Long countSellers() {
+   return count();
+  }
+
 }
